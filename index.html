@@ -1,5 +1,232 @@
----
-layout: home
-title: Achmad Naufal
-subtitle: This is where I will tell my friends way too much about me
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achmad Naufal — Data Analyst</title>
+  <meta name="description" content="Lead Data Analyst specializing in nature-based solutions, carbon markets, and pharma BI." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d1117; --bg2: #161b22; --bg3: #21262d;
+      --border: #30363d; --text: #e6edf3; --muted: #8b949e;
+      --accent: #58a6ff; --accent2: #3fb950; --accent3: #f78166;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; line-height: 1.6; font-size: 16px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,17,23,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-weight: 600; font-size: 1rem; color: var(--text); letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+    #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 56px; max-width: 900px; margin: 0 auto; }
+    .hero-label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .hero-name { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--text); margin-bottom: 0.5rem; }
+    .hero-title { font-size: clamp(1rem, 2.5vw, 1.4rem); color: var(--muted); margin-bottom: 1.5rem; font-weight: 400; }
+    .hero-tagline { font-size: clamp(0.95rem, 2vw, 1.1rem); color: var(--text); max-width: 520px; line-height: 1.7; border-left: 3px solid var(--accent); padding-left: 1rem; }
+    .hero-cta { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: all 0.2s; border: 1px solid transparent; }
+    .btn-primary { background: var(--accent); color: #0d1117; }
+    .btn-primary:hover { background: #79b8ff; }
+    .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .section-heading { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-heading::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    #about p { color: var(--muted); max-width: 640px; font-size: 1.05rem; line-height: 1.8; }
+    #about p + p { margin-top: 1rem; }
+    .domains-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .domain-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; transition: border-color 0.2s, transform 0.2s; }
+    .domain-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .domain-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+    .domain-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .domain-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+    .stack-groups { display: flex; flex-direction: column; gap: 1.5rem; }
+    .stack-group-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+    .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--border); background: var(--bg2); color: var(--text); }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; }
+    .dot-blue { background: #58a6ff; } .dot-green { background: #3fb950; } .dot-orange { background: #f0883e; } .dot-purple { background: #bc8cff; } .dot-teal { background: #39d3c3; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .project-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; gap: 0.5rem; }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .project-header { display: flex; align-items: center; gap: 0.5rem; }
+    .project-name { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+    .project-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; }
+    .project-tag { font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 12px; background: var(--bg3); color: var(--muted); border: 1px solid var(--border); }
+    .pubs { display: flex; flex-direction: column; gap: 1rem; }
+    .pub-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; }
+    .pub-meta { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+    .pub-title { font-size: 0.95rem; font-weight: 500; color: var(--text); margin-bottom: 0.6rem; line-height: 1.5; }
+    .pub-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; }
+    .pub-link:hover { text-decoration: underline; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .contact-card { display: flex; align-items: center; gap: 0.6rem; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1.25rem; text-decoration: none; color: var(--text); font-size: 0.875rem; font-weight: 500; transition: all 0.2s; }
+    .contact-card:hover { border-color: var(--accent); color: var(--accent); }
+    footer { border-top: 1px solid var(--border); text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--muted); }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; } .nav-links { gap: 1rem; }
+      section { padding: 4rem 1.25rem; } #hero { padding: 56px 1.25rem 2rem; }
+      .projects-grid { grid-template-columns: 1fr; } .domains-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="nav-brand">AN</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-label">Data Analyst &amp; BI Engineer</div>
+    <h1 class="hero-name">Achmad Naufal</h1>
+    <p class="hero-title">Lead Data Analyst, Asia &mdash; Nature-Based Solutions &amp; Carbon Markets</p>
+    <p class="hero-tagline">Turning messy field data into decisions that matter &mdash; across carbon markets, pharma distribution, and conservation.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-heading fade-in">About</div>
+    <p class="fade-in">I'm a data analyst based in Indonesia with a Master's in Technology Management (Business Analytics) and a Bachelor's in Statistics from ITS Surabaya. I specialize in end-to-end data systems — from field data collection to BI dashboards and carbon monitoring pipelines.</p>
+    <p class="fade-in">Currently leading analytics across Asia for a nature-based solutions organization, previously at a regional pharma distributor in Singapore. I also freelance in pharma BI and NbS data systems, and have published research applying machine learning to climate and health domains.</p>
+  </section>
+
+  <section id="domains">
+    <div class="section-heading fade-in">Domains</div>
+    <div class="domains-grid">
+      <div class="domain-card fade-in">
+        <div class="domain-icon">🌿</div>
+        <h3>Nature-Based Solutions</h3>
+        <p>Carbon credit MRV, reforestation monitoring, biodiversity KPIs, Verra/Gold Standard reporting, and field data systems with KoboToolbox.</p>
+      </div>
+      <div class="domain-card fade-in">
+        <div class="domain-icon">💊</div>
+        <h3>Pharma BI</h3>
+        <p>Sales performance dashboards, CRM analytics (Veeva), distribution intelligence, and IQVIA data pipelines for regional pharma operations.</p>
+      </div>
+      <div class="domain-card fade-in">
+        <div class="domain-icon">&#9935;</div>
+        <h3>Mining Analytics</h3>
+        <p>Coal production monitoring, equipment utilization tracking, geospatial analysis with QGIS, and operational KPI systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="section-heading fade-in">Tech Stack</div>
+    <div class="stack-groups">
+      <div class="fade-in">
+        <div class="stack-group-label">BI &amp; Visualization</div>
+        <div class="badges">
+          <span class="badge"><span class="badge-dot dot-blue"></span>Power BI</span>
+          <span class="badge"><span class="badge-dot dot-orange"></span>Tableau</span>
+          <span class="badge"><span class="badge-dot dot-green"></span>Qlik Sense</span>
+          <span class="badge"><span class="badge-dot dot-purple"></span>Streamlit</span>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="stack-group-label">Languages &amp; Query</div>
+        <div class="badges">
+          <span class="badge"><span class="badge-dot dot-blue"></span>Python</span>
+          <span class="badge"><span class="badge-dot dot-teal"></span>SQL</span>
+          <span class="badge"><span class="badge-dot dot-orange"></span>DuckDB</span>
+          <span class="badge"><span class="badge-dot dot-green"></span>dbt</span>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="stack-group-label">Field &amp; Geospatial</div>
+        <div class="badges">
+          <span class="badge"><span class="badge-dot dot-green"></span>QGIS</span>
+          <span class="badge"><span class="badge-dot dot-orange"></span>KoboToolbox</span>
+          <span class="badge"><span class="badge-dot dot-teal"></span>ODK Collect</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-heading fade-in">Featured Projects</div>
+    <div class="projects-grid">
+      <a class="project-card fade-in" href="https://github.com/achmadnaufal/carbon-credit-calculator" target="_blank" rel="noopener">
+        <div class="project-header"><span>🌱</span><span class="project-name">carbon-credit-calculator</span></div>
+        <p class="project-desc">Carbon sequestration estimation and credit valuation tool for NbS projects.</p>
+        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">NbS</span><span class="project-tag">MRV</span></div>
+      </a>
+      <a class="project-card fade-in" href="https://github.com/achmadnaufal/pharma-sales-dashboard" target="_blank" rel="noopener">
+        <div class="project-header"><span>💊</span><span class="project-name">pharma-sales-dashboard</span></div>
+        <p class="project-desc">Regional pharma sales performance dashboard with territory and SKU-level breakdowns.</p>
+        <div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">SQL</span><span class="project-tag">Pharma</span></div>
+      </a>
+      <a class="project-card fade-in" href="https://github.com/achmadnaufal/coal-production-monitor" target="_blank" rel="noopener">
+        <div class="project-header"><span>📉</span><span class="project-name">coal-production-monitor</span></div>
+        <p class="project-desc">Operational KPI monitoring for coal mining — production vs target, equipment utilization.</p>
+        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Streamlit</span><span class="project-tag">Mining</span></div>
+      </a>
+      <a class="project-card fade-in" href="https://github.com/achmadnaufal/nbs-monitoring-kpi-dashboard" target="_blank" rel="noopener">
+        <div class="project-header"><span>📊</span><span class="project-name">nbs-monitoring-kpi-dashboard</span></div>
+        <p class="project-desc">KPI dashboard for NbS programs — biodiversity, reforestation, and carbon metrics.</p>
+        <div class="project-tags"><span class="project-tag">Tableau</span><span class="project-tag">NbS</span><span class="project-tag">KPI</span></div>
+      </a>
+      <a class="project-card fade-in" href="https://github.com/achmadnaufal/field-data-toolkit" target="_blank" rel="noopener">
+        <div class="project-header"><span>🗂️</span><span class="project-name">field-data-toolkit</span></div>
+        <p class="project-desc">Utilities for cleaning and transforming KoboToolbox field survey exports for downstream analytics.</p>
+        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">KoboToolbox</span><span class="project-tag">ETL</span></div>
+      </a>
+      <a class="project-card fade-in" href="https://github.com/achmadnaufal/duckdb-analytics-templates" target="_blank" rel="noopener">
+        <div class="project-header"><span>🦆</span><span class="project-name">duckdb-analytics-templates</span></div>
+        <p class="project-desc">Reusable DuckDB query templates and patterns for fast local analytics on large datasets.</p>
+        <div class="project-tags"><span class="project-tag">DuckDB</span><span class="project-tag">SQL</span><span class="project-tag">Analytics</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="section-heading fade-in">Publications</div>
+    <div class="pubs">
+      <div class="pub-card fade-in">
+        <div class="pub-meta">Journal Article &middot; 2019 &middot; MethodsX</div>
+        <p class="pub-title">Evaluation of performance of drought prediction in Indonesia based on TRMM and MERRA-2 using machine learning methods</p>
+        <a class="pub-link" href="https://doi.org/10.1016/j.mex.2019.05.029" target="_blank" rel="noopener">&#8599; doi.org/10.1016/j.mex.2019.05.029</a>
+      </div>
+      <div class="pub-card fade-in">
+        <div class="pub-meta">Research Paper &middot; ITS Repository</div>
+        <p class="pub-title">Analyzing User Reviews with Aspect-Based Sentiment Analysis for Enhancing Digital Health Service Quality Using Machine Learning</p>
+        <a class="pub-link" href="https://repository.its.ac.id/117444/" target="_blank" rel="noopener">&#8599; repository.its.ac.id/117444</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-heading fade-in">Contact</div>
+    <p class="fade-in" style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;">Open to freelance projects in pharma BI and NbS data systems.</p>
+    <div class="contact-links fade-in">
+      <a class="contact-card" href="https://www.linkedin.com/in/achnfl" target="_blank" rel="noopener"><span>💼</span> LinkedIn</a>
+      <a class="contact-card" href="https://github.com/achmadnaufal" target="_blank" rel="noopener"><span>🐙</span> GitHub</a>
+      <a class="contact-card" href="mailto:achmadnaufal440@gmail.com"><span>✉️</span> achmadnaufal440@gmail.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Achmad Naufal &middot; <a href="https://github.com/achmadnaufal" style="color:var(--muted);">github.com/achmadnaufal</a></p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => { if (el.isIntersecting) { el.target.classList.add('visible'); observer.unobserve(el.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
